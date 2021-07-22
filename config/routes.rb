@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get "/" => "homes#top"
     resources :items, only: [:new, :index, :create, :show, :edit, :update]
     resources :genres, only: [:index, :create, :edit, :update]
-    resources :customers, only: [:index, :show, :edit, :update]
+    resources :end_users, only: [:index, :show, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
   end
@@ -18,9 +18,9 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get "/about" => "homes#about"
     resources :items, only: [:index, :show]
-    resources :customers, only: [:show, :edit, :update]
-    get "/customers/confirm" => "customers#confirm"
-    patch "/customers/about" => "customers#withdraw"
+    resources :end_users, only: [:show, :edit, :update]
+    get "/end_users/confirm" => "end_users#confirm"
+    patch "/end_users/about" => "end_users#withdraw"
     resources :cart_items, only: [:index, :create, :update, :destroy, :destroy_all]
     resources :orders, only: [:new, :index, :create, :show]
     get "/orders/complete" => "orders#complete"
