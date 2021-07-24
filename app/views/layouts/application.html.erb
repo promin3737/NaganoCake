@@ -22,7 +22,7 @@
             <ul class="navbar-nav ml-auto">
             <% if end_user_signed_in? %>
               <li>
-                <%= link_to "マイページ", end_user_path(current_end_user.id), class: 'nav-link text-dark' %>
+                <%= link_to "マイページ", end_user_mypage_path, class: 'nav-link text-dark' %>
               </li>
               <li>
                 <%= link_to "商品一覧", items_path, class: 'nav-link text-dark' %>

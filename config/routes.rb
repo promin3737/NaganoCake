@@ -18,9 +18,13 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get "/about" => "homes#about"
     resources :items, only: [:index, :show]
-    resources :end_users, only: [:show, :edit, :update]
-    get "/end_users/confirm" => "end_users#confirm"
-    patch "/end_users/about" => "end_users#withdraw"
+    patch "/end_user" => "end_users#update"
+    put "/end_user" => "end_users#update"
+    get "/end_user/edit_profile" => "end_users#edit"
+    get "/end_user/mypage" => "end_users#mypage"
+    get "/end_user/confirm" => "end_users#confirm"
+    patch "/end_user/withdraw" => "end_users#withdraw"
+    put "/end_user/withdraw" => "end_users#withdraw"
     resources :cart_items, only: [:index, :create, :update, :destroy, :destroy_all]
     resources :orders, only: [:new, :index, :create, :show]
     get "/orders/complete" => "orders#complete"
