@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  protect_from_forgery with: :null_session
 
   def after_sign_out_path_for(resource)
     if resource == :admin
@@ -13,7 +14,7 @@ class ApplicationController < ActionController::Base
     if admin_signed_in?
       admin_path
     else
-      customer_path(resource)
+      end_user_mypage_path
     end
   end
 

@@ -2,7 +2,19 @@
 
 class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :configure_sign_in_params, only: [:create]
 
+  def configure_sign_in_params
+    @end_user = EndUser.find_by(email: params[:end_user][:email])
+    if @end_user
+      if (@end_user.valid_password?(params[:end_user][:password]) && (@end_user.active_for_authentication? == false))
+        flash[:error] = "退会済みです。"
+        redirect_to new_end_user_session_path
+      end
+    else
+      flash[:error] = "必須項目を入力してください。"
+    end
+  end
   # GET /resource/sign_in
   # def new
   #   super
