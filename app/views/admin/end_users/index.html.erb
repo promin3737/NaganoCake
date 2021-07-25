@@ -17,7 +17,13 @@
             <td><%= end_user.id %></td>
             <td><%= end_user.last_name %><%= end_user.first_name %></td>
             <td><%= end_user.email %></td>
-            <td><%= end_user.is_status %></td>
+            <td>
+              <% if end_user.is_status == false %>
+                退会済
+              <% else %>
+                有効
+              <% end %>
+            </td>
           </tr>
           <% end %>
         </tbody>
