@@ -1,0 +1,35 @@
+<div class ="container">
+  <div class ="row">
+    <div class="col-md-11 mx-auto">
+      <h2>商品一覧</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+            <th>ジャンル</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+            <td><%= item.genre.name %></td>
+            <td>
+              <% if item.is_status == false %>
+                販売停止中
+              <% else %>
+                販売中
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
