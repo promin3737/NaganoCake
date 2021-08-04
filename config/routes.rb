@@ -25,7 +25,11 @@ Rails.application.routes.draw do
     get "/end_user/confirm" => "end_users#confirm"
     patch "/end_user/withdraw" => "end_users#withdraw"
     put "/end_user/withdraw" => "end_users#withdraw"
-    resources :cart_items, only: [:index, :create, :update, :destroy, :destroy_all]
+    resources :cart_items, only: [:index, :create]
+    patch "/cart_items" => "cart_items#update"
+    put "/cart_items" => "cart_items#update"
+    delete "/cart_items" => "cart_items#destroy"
+    delete "/cart_items/all" => "cart_items#destroy_all"
     resources :orders, only: [:new, :index, :create, :show]
     get "/orders/complete" => "orders#complete"
     post "/orders/confirm" => "orders#confirm"
