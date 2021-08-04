@@ -29,6 +29,7 @@ Genre.create!(
 )
 
 Item.create!(
+    genre_id: 1,
     name: "test_item",
     introduction: "test_introduction",
     image: File.open('./app/assets/images/unnamed.jpg'),
