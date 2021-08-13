@@ -2,6 +2,85 @@
   <div class ="row">
     <div class="col-md-10">
       <h2>注文履歴詳細</h2>
+      <div class="text-contents">
+        <h4>購入者</h4>
+        <%= @order.end_user.full_name %>
+      </div>
+      <div class="text-contents">
+        <h4>注文日</h4>
+        <%= @order.created_at.strftime('%Y/%m/%d') %>
+      </div>
+      <div class="text-contents">
+        <h4>配送先</h4>
+        〒<%= @order.postal_code %><br>
+        <%= @order.address %><br>
+        <%= @order.name %>
+      </div>
+      <div class="text-contents">
+        <h4>支払方法</h4>
+        <%= @order.method %>
+      </div>
+      <div class="text-contents">
+        <h4>注文ステータス</h4>
+        <%= form_with model: @order, url: admin_order_path, local:true, method: :patch do |f| %>
+          <%= f.select :status, Order.statuses.keys.to_a, {} %>
+          <%#= f.collection_select :status, Order.all, :id, :status %>
+          <%= f.hidden_field :id, :value => @order.id %>
+          <%#= f.select :status, @order.order_details, include_blank: @order_detail.status %>
+          <%= f.submit '更新', class:"btn btn-success" %>
+        <% end %>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>製作ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @sum = 0 %>
+          <% @order.order_details.each do |order_detail| %>
+          <tr>
+            <td><%= order_detail.item.name %></td>
+            <td><%= number_with_precision(order_detail.item.price * 1.1, precision: 0) %></td>
+            <td><%= order_detail.amount %></td>
+            <td><%= number_with_precision(order_detail.item.price * 1.1, precision: 0).to_i * order_detail.amount.to_i %></td>
+              <% @sum += number_with_precision(order_detail.item.price * 1.1, precision: 0).to_i * order_detail.amount.to_i %>
+            <td>
+              <%= form_with model: order_detail, url: admin_order_detail_path, local:true, method: :patch do |f| %>
+                <%= f.hidden_field :id, :value => order_detail.id %>
+                <%= f.select :status, OrderDetail.statuses.keys.to_a, {} %>
+                <%#= f.collection_select :status, OrderDetail.all, :id, :status %>
+                <%= f.submit '更新', class:"btn btn-success" %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <table>
+        <tr>
+          <td>商品合計</td>
+          <td><%= @sum %>円</td>
+        </tr>
+        <tr>
+          <td>送料</td>
+          <td>
+            <% @order.shipping_price = 800 %>
+            <%= @order.shipping_price %>円
+          </td>
+        </tr>
+        <tr>
+          <td>請求金額合計</td>
+          <td>
+            <% @order.total_price = @order.shipping_price + @sum %>
+            <%= @order.total_price %>円
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

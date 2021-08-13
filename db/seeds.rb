@@ -37,6 +37,13 @@ Item.create!(
     is_status: true
 )
 
+Address.create!(
+    end_user_id: 1,
+    name: "上ヶ原次郎",
+    address: "兵庫県西宮市上ケ原一番町1-155",
+    postal_code: "662-8501"
+)
+
 
 
 

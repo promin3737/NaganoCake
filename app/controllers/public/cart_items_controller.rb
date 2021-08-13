@@ -1,4 +1,5 @@
 class Public::CartItemsController < ApplicationController
+  before_action :authenticate_end_user!
   def index
     # @cart_item = CartItem.find(params[:id])
     @cart_items = current_end_user.cart_items
@@ -26,7 +27,7 @@ class Public::CartItemsController < ApplicationController
         cart_item.save
         flash[:notice] = "Item was successfully added to cart."
         redirect_to cart_items_path
-      else 
+      else
         @cart_item.save
         flash[:notice] = "New Item was successfully added to cart."
         redirect_to cart_items_path
@@ -52,7 +53,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy_all
-    CartItem.destroy_all
+    current_end_user.cart_items.destroy_all
     redirect_to cart_items_path
   end
 

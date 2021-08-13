@@ -3,7 +3,7 @@
         <div class="col-md-8">
             <h2>ジャンル編集</h2>
             <div class="input-group mb-3 mt-4">
-                <%= form_with model: @genre, url: admin_genre_path(current_admin), local:true do |f| %>
+                <%= form_with model: @genre, url: admin_genre_path(@genre), local:true do |f| %>
                 <div class="form-group">
                     <h4>ジャンル名</h4>
                     <%= f.text_field :name %>
