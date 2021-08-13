@@ -30,9 +30,10 @@ Rails.application.routes.draw do
     put "/cart_items" => "cart_items#update"
     delete "/cart_items" => "cart_items#destroy"
     delete "/cart_items/all" => "cart_items#destroy_all"
-    resources :orders, only: [:new, :index, :create, :show]
-    get "/orders/complete" => "orders#complete"
-    get "/orders/confirm" => "orders#confirm"
+    resources :orders, only: [:new, :index, :create]
+    get "/orders/complete" => "orders#complete", param: :complete
+    get "/orders/confirm" => "orders#confirm", param: :confirm
+    get "/orders/:id" => "orders#show", as: "order"
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
   end
 
