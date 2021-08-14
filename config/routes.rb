@@ -14,10 +14,14 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
+
     devise_for :end_users
+
     root to: 'homes#top'
     get "/about" => "homes#about"
+
     resources :items, only: [:index, :show]
+
     patch "/end_user" => "end_users#update"
     put "/end_user" => "end_users#update"
     get "/end_user/edit_profile" => "end_users#edit"
@@ -25,16 +29,20 @@ Rails.application.routes.draw do
     get "/end_user/confirm" => "end_users#confirm"
     patch "/end_user/withdraw" => "end_users#withdraw"
     put "/end_user/withdraw" => "end_users#withdraw"
-    resources :cart_items, only: [:index, :create]
+
     patch "/cart_items" => "cart_items#update"
     put "/cart_items" => "cart_items#update"
     delete "/cart_items" => "cart_items#destroy"
     delete "/cart_items/all" => "cart_items#destroy_all"
+    resources :cart_items, only: [:index, :create]
+
+    get "/orders/confirm" => "orders#confirm"
+    get "/orders/complete" => "orders#complete"
     resources :orders, only: [:new, :index, :create]
-    get "/orders/complete" => "orders#complete", param: :complete
-    get "/orders/confirm" => "orders#confirm", param: :confirm
     get "/orders/:id" => "orders#show", as: "order"
+
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
+
   end
 
 end
