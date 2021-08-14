@@ -1,4 +1,6 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_admin!,only: [:create, :edit, :update, :index, :show, :new]
+
   def index
     @items = Item.all
   end
@@ -9,6 +11,7 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    byebug
     @item.save
     flash[:notice]="You have creatad item successfully."
     redirect_to admin_item_path(current_admin)

@@ -1,4 +1,6 @@
 class Public::AddressesController < ApplicationController
+  before_action :authenticate_end_user!
+
   def index
     @addresses = current_end_user.addresses
     @address = Address.new

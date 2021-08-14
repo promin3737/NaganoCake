@@ -1,4 +1,6 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_end_user!
+
   def new
     @order = Order.new
     @address = Address.new
@@ -45,33 +47,46 @@ class Public::OrdersController < ApplicationController
 
   def confirm
     # binding.pry
-    @order = Order.new
+    @order = Order.new(order_params)
+    # byebug
     @cart_items = current_end_user.cart_items
+
     if  params[:order][:address_option] == "0"
+
       @order.name = current_end_user.full_name
       @order.postal_code = current_end_user.postal_code
       @order.address = current_end_user.address
+
     elsif params[:order][:address_option] == "1"
-      @order.name = params[:address][:name]
-      @order.postal_code = params[:address][:postal_code]
-      @order.address = params[:address][:address]
+
+      @order.name = Address.find(params[:order][:address]).name #newページで選ばれた配送先住所idから特定して宛名の取得代入
+      @order.postal_code = Address.find(params[:order][:address]).postal_code #newページで選ばれた配送先住所idから特定して郵便番号の取得代入
+      @order.address = Address.find(params[:order][:address]).address #newページで選ばれた配送先住所idから特定して住所の取得代入
+
+      # @order.name = params[:address][:name]
+      # @order.postal_code = params[:address][:postal_code]
+      # @order.address = params[:address][:address]
+
     elsif params[:order][:address_option] == "2"
+
       @order.name = params[:address][:name]
       @order.postal_code = params[:address][:postal_code]
       @order.address = params[:address][:address]
+
       @address = Address.new(address_params)
       @address.end_user_id = current_end_user.id
       @address.name = params[:address][:name]
       @address.postal_code = params[:address][:postal_code]
       @address.address = params[:address][:address]
       @address.save
+
     end
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:total_price, :status, :shipping_price, :method, :name, :address, :postal_code, :address_option)
+    params.require(:order).permit(:total_price, :status, :shipping_price, :method, :name, :address, :postal_code)
   end
 
   def address_params

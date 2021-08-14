@@ -2,12 +2,9 @@
   <div class ="row">
     <div class="col-md-8">
       <h2>注文履歴詳細</h2>
-      <h4>注文情報</h4>
       <table class="table table-striped">
-        <% @order_details.each do |order_detail| %>
+        <h4>注文情報</h4>
         <tbody>
-          <% @sum = 0 %>
-          <% @sum += number_with_precision(order_detail.price * 1.1, precision: 0).to_i * order_detail.amount.to_i %>
           <tr>
             <td>注文日</td>
             <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
@@ -37,16 +34,14 @@
         <tbody>
           <tr>
             <td>商品合計</td>
-            <td><%= @sum %></td>
+            <td><%= @order.total_price - @order.shipping_price %></td>
           </tr>
           <tr>
             <td>配送料</td>
-            <% @order.shipping_price = 800 %>
             <td><%= @order.shipping_price %></td>
           </tr>
           <tr>
             <td>ご請求額</td>
-            <% @order.total_price = @order.shipping_price + @sum %>
             <td><%= @order.total_price %></td>
           </tr>
         </tbody>
@@ -61,6 +56,7 @@
           <th>小計</th>
         </thead>
         <tbody>
+          <% @order_details.each do |order_detail| %>
           <tr>
             <td><%= order_detail.item.name %></td>
             <td><%= number_with_precision(order_detail.price * 1.1, precision: 0) %></td>

@@ -25,7 +25,7 @@
         <%= form_with model: @order, url: admin_order_path, local:true, method: :patch do |f| %>
           <%= f.select :status, Order.statuses.keys.to_a, {} %>
           <%#= f.collection_select :status, Order.all, :id, :status %>
-          <%= f.hidden_field :id, :value => @order.id %>
+          <%#= f.hidden_field :id, :value => @order.id %>
           <%#= f.select :status, @order.order_details, include_blank: @order_detail.status %>
           <%= f.submit '更新', class:"btn btn-success" %>
         <% end %>
@@ -50,8 +50,8 @@
             <td><%= number_with_precision(order_detail.item.price * 1.1, precision: 0).to_i * order_detail.amount.to_i %></td>
               <% @sum += number_with_precision(order_detail.item.price * 1.1, precision: 0).to_i * order_detail.amount.to_i %>
             <td>
-              <%= form_with model: order_detail, url: admin_order_detail_path, local:true, method: :patch do |f| %>
-                <%= f.hidden_field :id, :value => order_detail.id %>
+              <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), local:true, method: :patch do |f| %>
+                <%#= f.hidden_field :order_detail_id, :value => order_detail.id %>
                 <%= f.select :status, OrderDetail.statuses.keys.to_a, {} %>
                 <%#= f.collection_select :status, OrderDetail.all, :id, :status %>
                 <%= f.submit '更新', class:"btn btn-success" %>

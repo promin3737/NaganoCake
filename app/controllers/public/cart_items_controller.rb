@@ -1,5 +1,6 @@
 class Public::CartItemsController < ApplicationController
   before_action :authenticate_end_user!
+  
   def index
     # @cart_item = CartItem.find(params[:id])
     @cart_items = current_end_user.cart_items
