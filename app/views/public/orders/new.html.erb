@@ -7,16 +7,18 @@
       <%#= f.hidden_field :id, :value => order.id %>
       <%# end %>
       <div class="text-contents">
-        <h4>支払方法</h4>
+        <h4><strong>支払方法</strong></h4>
         <label><%= f.radio_button :method, "クレジットカード" %>クレジットカード</label>
         <label><%= f.radio_button :method, "銀行振り込み" %>銀行振込</label>
       </div>
       <div class="text-contents">
-        <h4>お届け先</h4>
-        <label><%= f.radio_button :address_option, 0 %>ご自身の住所</label>
-        <label><%= f.radio_button :address_option, 1 %>登録済住所から選択</label>
-        <%= f.collection_select :address, current_end_user.addresses, :id, :address %>
-        <label><%= f.radio_button :address_option, 2 %>新しいお届け先</label>
+        <h4><strong>お届け先</strong></h4>
+        <label><%= f.radio_button :address_option, 0 %>ご自身の住所</label><br>
+        〒<%= current_end_user.postal_code %> <%= current_end_user.address %><br>
+        <%= current_end_user.full_name %><br><br>
+        <label><%= f.radio_button :address_option, 1 %>登録済住所から選択</label><br>
+        <%= f.collection_select :address, current_end_user.addresses, :id, :address %><br><br>
+        <label><%= f.radio_button :address_option, 2 %>新しいお届け先</label><br>
         <%= form_with model: @address, local:true do |ff| %>
         <div class="form-group">
           <label for="postal_code">郵便番号</label>
