@@ -2,17 +2,17 @@
   <div class ="row">
     <div class="col-md-10 mx-auto">
       <h2>商品一覧（全<%= @items.count =%>件）</h2>
+      <div class="image-container">
       <% @items.each do |item| %>
         <div class="item_image">
           <%= link_to item_path(item) do %>
-            <%= attachment_image_tag item, :image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %>
+            <%= attachment_image_tag item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %><br>
           <% end %>
-        </div>
-        <div class="text-contents">
-          <%= item.name %>
+          <%= item.name %><br>
           ¥<%= number_with_precision(item.price * 1.1, precision: 0) %>
         </div>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
