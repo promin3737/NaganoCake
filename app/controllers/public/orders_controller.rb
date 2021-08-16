@@ -38,8 +38,8 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
-    @order_details = @order.order_details
+    @order = Order.find(params[:id])  #order特定
+    @order_details = @order.order_details #特定したorderからorder_items全部取得
   end
 
   def complete
@@ -53,9 +53,9 @@ class Public::OrdersController < ApplicationController
 
     if  params[:order][:address_option] == "0"
 
-      @order.name = current_end_user.full_name
-      @order.postal_code = current_end_user.postal_code
-      @order.address = current_end_user.address
+      @order.name = current_end_user.full_name  #自身の宛名をorderの宛名に入れる
+      @order.postal_code = current_end_user.postal_code #自身の郵便番号をorderの郵便番号に入れる
+      @order.address = current_end_user.address #自身の住所をorderの住所に入れる
 
     elsif params[:order][:address_option] == "1"
 
@@ -74,10 +74,11 @@ class Public::OrdersController < ApplicationController
       @order.address = params[:address][:address]
 
       @address = Address.new(address_params)
-      @address.end_user_id = current_end_user.id
-      @address.name = params[:address][:name]
-      @address.postal_code = params[:address][:postal_code]
-      @address.address = params[:address][:address]
+      @address.end_user_id = current_end_user.id  
+      @address.name = params[:address][:name] #newページで新しいお届け先に入力した宛名を取得代入
+      @address.postal_code = params[:address][:postal_code] #newページで新しいお届け先に入力した郵便番号を取得代入
+      @address.address = params[:address][:address] #newページで新しいお届け先に入力した住所を取得代入
+
       @address.save
 
     end
