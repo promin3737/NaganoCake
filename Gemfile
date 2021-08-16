@@ -77,3 +77,6 @@ gem 'pry-byebug'
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
+
+gem "refile-s3"
+gem 'dotenv-rails'
