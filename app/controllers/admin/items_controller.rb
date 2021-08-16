@@ -12,7 +12,7 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    byebug
+    # byebug
     @item.save
     flash[:notice]="You have creatad item successfully."
     redirect_to admin_item_path(current_admin)

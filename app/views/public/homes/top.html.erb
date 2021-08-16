@@ -23,7 +23,7 @@
           <div class="recommendation-items">
             <%= link_to item_path(item.id) do %> <!-- 画像をクリックしたら商品詳細画面へ遷移 -->
               <%#= attachment_image_tag item, :image, size: "150x150",  fallback: "no_image.jpg"%>
-              <%= attachment_image_tag item, :image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %><br>
+              <%= attachment_image_tag item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %><br>
             <% end %>
             <p><%= item.name %></p>
             <p>¥<%= (item.price * 1.1).floor %></p> <!-- 税込計算式/.floor => 浮動小数点数の切り捨てを行うためFloatクラスのfloorメソッドを使用 -->
