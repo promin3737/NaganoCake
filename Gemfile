@@ -81,4 +81,5 @@ end
 gem "refile-s3"
 gem 'dotenv-rails'
 # gem 'fog-aws'
+# gem 'aws-sdk', '~> 3'
 
