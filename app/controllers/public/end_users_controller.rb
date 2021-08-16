@@ -22,6 +22,7 @@ class Public::EndUsersController < ApplicationController
   def confirm
   end
 
+  # ユーザーの退会（論理削除）=> "物理削除"ではないためupdateを使用している。
   def withdraw
     @end_user = current_end_user
     if @end_user.update(is_status: false)

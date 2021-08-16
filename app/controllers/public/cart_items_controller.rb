@@ -21,10 +21,10 @@ class Public::CartItemsController < ApplicationController
     #   redirect_to cart_items_path
     # end
     @cart_item = CartItem.new(cart_item_params)
-    @cart_item.end_user_id = current_end_user.id
-      if current_end_user.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
-        cart_item = current_end_user.cart_items.find_by(item_id: params[:cart_item][:item_id])
-        cart_item.amount += params[:cart_item][:amount].to_i
+    @cart_item.end_user_id = current_end_user.id  #誰のカートか紐付け
+      if current_end_user.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?  #カート内に商品があるかどうか？
+        cart_item = current_end_user.cart_items.find_by(item_id: params[:cart_item][:item_id])  #カート内のすでにある商品の情報取得
+        cart_item.amount += params[:cart_item][:amount].to_i  #既にある情報に個数を合算
         cart_item.save
         flash[:notice] = "Item was successfully added to cart."
         redirect_to cart_items_path
@@ -54,7 +54,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy_all
-    current_end_user.cart_items.destroy_all
+    current_end_user.cart_items.destroy_all #全てのカート商品を削除
     redirect_to cart_items_path
   end
 
