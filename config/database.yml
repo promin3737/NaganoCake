@@ -30,4 +30,4 @@ production:
   pool: 5
   database: naganocake_production
   username: naganocake
-  password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
+  password: <%= ENV['NAGANOCAKE_DATABASE_PASSWORD'] %>
