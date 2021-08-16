@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <h2>会員情報編集</h2>
+      <div class="form-body">
+      <!--<div class="form-body">-->
+        <%= form_with model: @end_user, local:true do |f| %>
+          <!--<div class="input-group mb-3 mt-4">-->
+          <div>
+            <div class="form-group">
+              <div class="cod-md-4">
+                <label for="end_user_name">氏名</label>
+                <%= f.text_field :last_name, class:"form-control" %>
+              </div>
+              <div class="cod-md-4">
+                <%= f.text_field :first_name, class:"form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="cod-md-4">
+                <label for="end_user_name_kana">カナ</label>
+                <%= f.text_field :last_name_kana, class:"form-control" %>
+              </div>
+              <div class="cod-md-4">
+                <%= f.text_field :first_name_kana, class:"form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="postal_code">郵便番号</label>
+              <%= f.text_field :postal_code, class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="address">住所</label>
+              <%= f.text_field :address, class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="phone_number">電話番号</label>
+              <%= f.text_field :phone_number, class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <%= f.email_field :email, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.submit '編集内容を保存', class:"btn btn-block btn-success" %>
+            <%= link_to "退会する", end_user_confirm_path, class: 'btn btn-block btn-danger' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

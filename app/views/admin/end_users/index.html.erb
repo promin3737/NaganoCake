@@ -1,0 +1,33 @@
+<div class ="container">
+  <div class ="row">
+    <div class="col-md-11 mx-auto">
+      <h2>会員一覧</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @end_users.each do |end_user| %>
+          <tr>
+            <td><%= end_user.id %></td>
+            <td><%= end_user.last_name %><%= end_user.first_name %></td>
+            <td><%= end_user.email %></td>
+            <td>
+              <% if end_user.is_status == false %>
+                退会済
+              <% else %>
+                有効
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
