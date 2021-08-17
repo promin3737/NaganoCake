@@ -84,3 +84,4 @@ gem 'dotenv-rails'
 # gem 'aws-sdk', '~> 3'
 # gem "aws-sdk-s3"
 gem 'aws-sdk-s3', require: false
+#
