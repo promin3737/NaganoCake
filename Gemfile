@@ -72,6 +72,7 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
+
 gem "refile-mini_magick"
 gem 'pry-byebug'
 
@@ -79,8 +80,9 @@ group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
 
-gem "refile-s3"
+
 gem 'dotenv-rails'
+gem 'warden'
 # gem 'fog-aws'
 # gem 'aws-sdk', '~> 3'
 # gem "aws-sdk-s3"
