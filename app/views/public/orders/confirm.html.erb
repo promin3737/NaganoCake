@@ -19,7 +19,7 @@
           <% @cart_items.each do |cart_item| %>
           <tr>
             <td>
-              <%= attachment_image_tag cart_item.item, :image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %>
+              <%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %>
               <%= cart_item.item.name %>
             </td>
             <td><%= number_with_precision(cart_item.item.price * 1.1, precision: 0) %></td>
