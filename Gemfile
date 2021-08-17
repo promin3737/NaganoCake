@@ -88,3 +88,4 @@ gem 'warden'
 # gem "aws-sdk-s3"
 # gem 'aws-sdk-s3', require: false
 # gem 'aws-sdk', '~> 3'
+gem 'aws-sdk', '~> 2'
