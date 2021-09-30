@@ -84,4 +84,7 @@ end
 gem 'dotenv-rails'
 gem 'warden'
 # gem 'fog-aws'
-#
+
+# gem 'omniauth'
+# gem 'omniauth-google-oauth2'
+# gem 'omniauth-facebook'
