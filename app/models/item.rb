@@ -6,8 +6,8 @@ class Item < ApplicationRecord
   has_many :orders, dependent: :destroy, through: :order_details
   has_many :favorites, dependent: :destroy
 
-  def favorited_by?(end_user)
-    favorites.where(end_user_id: end_user.id).exists?
+  def favorited_by?(user)
+    favorites.where(end_user_id: user.id).exists? #引数で渡されたuserのidがfavoritesテーブル内のend_user_idと一致しているかどうか確認
   end
   
   validates :name, presence: true
