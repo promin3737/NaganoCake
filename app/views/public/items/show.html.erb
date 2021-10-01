@@ -12,6 +12,19 @@
             <strong><%= @item.name %></strong><br>
             <%= @item.introduction %><br><br>
             ¥<%= number_with_precision(@item.price * 1.1, precision: 0) %>(税込)<br>
+            <% if @item.favorited_by?(current_end_user) %>
+              <p>
+                <%= link_to item_favorites_path(@item), method: :delete do %>
+                ♥<%= @item.favorites.count %> いいね
+                <% end %>
+              </p>
+            <% else %>
+              <p>
+                <%= link_to item_favorites_path(@item), method: :post do %>
+                ♡<%= @item.favorites.count %> いいね
+                <% end %>
+              </p>
+            <% end %>
             <%#= f.collection_select(:cart_item_id, CartItem.all, :id, :amount, include_blank: "個数選択") %>
             <%#= f.select :cart_item_id, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], :id, :amount, include_blank: "個数選択" %>
             <%= f.number_field :amount, placeholder: "個数選択", min: 1, max: 20 %>
