@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get "/about" => "homes#about"
 
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index, :show] do
+      resource :favorites, only: [:create, :destroy]
+    end
 
     patch "/end_user" => "end_users#update"
     put "/end_user" => "end_users#update"
