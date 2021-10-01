@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show] do
       resource :favorites, only: [:create, :destroy]
     end
+    
+    resources :accesses, only: [:index]
 
     patch "/end_user" => "end_users#update"
     put "/end_user" => "end_users#update"

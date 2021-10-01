@@ -1,0 +1,41 @@
+    <h2>アクセス</h2>
+    <div id='map'></div>
+    
+    <style>
+    #map{
+      height: 500px;
+    }
+    </style>
+    
+    <script>
+    var map;
+    var marker;
+    var infoWindow;
+    var center = {
+      lat: 34.7385278, // 緯度
+      lng: 135.5640271 // 経度
+    };
+    function initMap() {
+       map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
+           center: center, // 地図の中心を指定
+           zoom: 18 // 地図のズームを指定
+         });
+       
+       marker = new google.maps.Marker({ // マーカーの追加
+          position: center, // マーカーを立てる位置を指定
+          map: map // マーカーを立てる地図を指定
+       });
+      
+       infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
+          content: '<div class="map"><strong>NaganoCake</strong></div>' // 吹き出しに表示する内容
+       });
+       marker.addListener('click', function() { // マーカーをクリックしたとき
+          infoWindow.open(map, marker); // 吹き出しの表示
+       });
+     }
+    
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['SECRET_KEY'] %>&callback=initMap" async defer></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeEambvajF4HN7r6S75p5ouXhYmG21MQw&callback=initMap" async defer></script>-->
+    

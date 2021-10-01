@@ -16,17 +16,17 @@
   		</div>
       <!-- オススメ商品表示 -->
       <br>
-  		<h4 class="recommendation"><i class="fas fa-crown"></i> 新着商品 <i class="fas fa-crown"></i></h4><br>
+  		<h4 class="recommendation"><i class="fas fa-crown"></i> 当店オススメ商品 <i class="fas fa-crown"></i></h4><br>
   		<div class="row">
         <div id="multiple-items">
-        <% @items.each do |item| %>
+        <% @rank_items.each do |rank_item| %>
           <div class="recommendation-items">
-            <%= link_to item_path(item.id) do %> <!-- 画像をクリックしたら商品詳細画面へ遷移 -->
+            <%= link_to item_path(rank_item.id) do %> <!-- 画像をクリックしたら商品詳細画面へ遷移 -->
               <%#= attachment_image_tag item, :image, size: "150x150",  fallback: "no_image.jpg"%>
-              <%= attachment_image_tag item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %><br>
+              <%= attachment_image_tag rank_item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %><br>
             <% end %>
-            <p><%= item.name %></p>
-            <p>¥<%= (item.price * 1.1).floor %></p> <!-- 税込計算式/.floor => 浮動小数点数の切り捨てを行うためFloatクラスのfloorメソッドを使用 -->
+            <p><%= rank_item.name %></p>
+            <p>¥<%= (rank_item.price * 1.1).floor %></p> <!-- 税込計算式/.floor => 浮動小数点数の切り捨てを行うためFloatクラスのfloorメソッドを使用 -->
           </div>
         <% end %>
 　　　　　</div>
@@ -40,5 +40,4 @@
   	    <p><%= link_to "もっと見る＞", items_path %></p>
   	  </div>
     </div>
-
   </div>
