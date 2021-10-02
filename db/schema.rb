@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_10_01_024548) do
-=======
-ActiveRecord::Schema.define(version: 2021_08_16_152352) do
->>>>>>> refs/remotes/origin/master
 
   create_table "addresses", force: :cascade do |t|
     t.integer "end_user_id", null: false
@@ -68,7 +64,6 @@ ActiveRecord::Schema.define(version: 2021_08_16_152352) do
     t.index ["reset_password_token"], name: "index_end_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   create_table "favorites", force: :cascade do |t|
     t.integer "end_user_id", null: false
     t.integer "item_id", null: false
@@ -78,8 +73,6 @@ ActiveRecord::Schema.define(version: 2021_08_16_152352) do
     t.index ["item_id"], name: "index_favorites_on_item_id"
   end
 
-=======
->>>>>>> refs/remotes/origin/master
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
