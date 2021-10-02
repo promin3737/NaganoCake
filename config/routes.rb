@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
     
     resources :accesses, only: [:index]
+    resources :items, only: [:index, :show]
 
     patch "/end_user" => "end_users#update"
     put "/end_user" => "end_users#update"

@@ -15,7 +15,11 @@ class Admin::ItemsController < ApplicationController
     # byebug
     @item.save
     flash[:notice]="You have creatad item successfully."
+<<<<<<< HEAD
     redirect_to admin_items_path
+=======
+    redirect_to admin_item_path(current_admin)
+>>>>>>> refs/remotes/origin/master
   end
 
   def show
