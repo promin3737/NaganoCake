@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
   end
-
+  
+  resources :events
+  # get "/events.json" => "events#index"
+  
   scope module: :public do
 
     devise_for :end_users
