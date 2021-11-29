@@ -15,9 +15,13 @@
  * It is generally better to create a new file per style scope.
  *
  *= require fullcalendar
- *= require_tree .
  *= require_self
  */
+ 
+ .name-size {
+  font-size: 30px;
+ }
+ 
  
 
  

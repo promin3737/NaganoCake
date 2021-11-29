@@ -1,3 +1,63 @@
 // Place all the styles related to the public/Homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top_image {
+  width: 100%;
+  height: 650px;
+  background-image: image-url('shutterstock_161584118.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-top {
+  position: relative;
+}
+
+.font-text {
+  width: auto;
+  height: auto;
+  text-align: center;
+  position: absolute;
+  top: 150px;
+  transform: rotate( 90deg );
+}
+
+.shop-name {
+  font-size: 80px;
+  line-height: 80px;
+}
+
+.sellers {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.best-sellers {
+  font-size: 60px;
+  color: green;
+  text-align: center;
+}
+
+.sellers-text {
+  font-size: 30px;
+  text-align: center;
+}
+
+.products-image {
+  display: flex;
+  justify-content: space-around;
+}
+
+.produts-link {
+  margin-top: 30px;
+  color: brown;
+  font-size: 40px;
+}
+
+.link {
+  color: brown;
+  border-bottom: solid;
+  border-color: brown;
+  border-width: 3px;/*5ピクセルの太さにする*/
+}

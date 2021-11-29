@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NaganoCake</title>
+    <title>Pâtisserie Moriguchi</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,8 +15,7 @@
   <body>
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand p-3" href="/"><i class="fas fa-birthday-cake"></i> NaganoCake <i class="fas fa-birthday-cake"></i></a>
+          <a class="navbar-brand p-3" href="/"><span><strong class="name-size">Pâtisserie Moriguchi </strong></span> ONLINE SHOP</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -65,28 +64,25 @@
                 <%= link_to "About", about_path, class: 'nav-link text-dark' %>
               </li>
               <li>
-                <%= link_to "商品一覧", items_path, class: 'nav-link text-dark' %>
+                <%= link_to "Products", items_path, class: 'nav-link text-dark' %>
               </li>
               <li>
-                <%= link_to "カレンダー", events_path, class: 'nav-link text-dark' %>
+                <%= link_to "Events", events_path, class: 'nav-link text-dark' %>
               </li>
               <li>
-                <%= link_to 'アクセス', accesses_path, class: 'nav-link text-dark' %>
+                <%= link_to 'Guide', accesses_path, class: 'nav-link text-dark' %>
               </li>
               <li>
-                <%= link_to "新規登録", new_end_user_registration_path, class: 'nav-link text-dark' %>
+                <%= link_to "Sign in", new_end_user_registration_path, class: 'nav-link text-dark' %>
               </li>
               <li>
-                <%= link_to "ログイン", new_end_user_session_path, class: 'nav-link text-dark' %>
+                <%= link_to "Log in", new_end_user_session_path, class: 'nav-link text-dark' %>
               </li>
             <% end %>
           </ul>
           </div>
-        </div>
       </nav>
     </header>
-
-
     <%= yield %>
   </body>
 </html>

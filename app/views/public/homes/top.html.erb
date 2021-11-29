@@ -1,43 +1,45 @@
-<div class="container takasa">
+<%= stylesheet_link_tag 'public/homes' %>
   <strong><%= notice %></strong>
-  <div class="row">
-    <div class="col-xs-9 ">
-      <!-- 画像背景 -->
-  		<div class="bg_top">
-        <!-- 白背景/サイト説明文 -->
-  			<div class="bg_top2">
-  			  <p class="font-text">
-  			  	ようこそ、NaganoCakeへ！<br>
-            このサイトは、ケーキ販売のECサイトになります。<br>
-            会員でない方も商品の閲覧はできますが、<br>
-            購入には会員登録が必要になります。
-          </p>
-  			</div>
-  		</div>
-      <!-- オススメ商品表示 -->
-      <br>
-  		<h4 class="recommendation"><i class="fas fa-crown"></i> 当店オススメ商品 <i class="fas fa-crown"></i></h4><br>
-  		<div class="row">
-        <div id="multiple-items">
-        <% @rank_items.each do |rank_item| %>
-          <div class="recommendation-items">
-            <%= link_to item_path(rank_item.id) do %> <!-- 画像をクリックしたら商品詳細画面へ遷移 -->
-              <%#= attachment_image_tag item, :image, size: "150x150",  fallback: "no_image.jpg"%>
-              <%= attachment_image_tag rank_item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %><br>
-            <% end %>
-            <p><%= rank_item.name %></p>
-            <p>¥<%= (rank_item.price * 1.1).floor %></p> <!-- 税込計算式/.floor => 浮動小数点数の切り捨てを行うためFloatクラスのfloorメソッドを使用 -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="top_image"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="bg-top">
+        <!-- 画像背景 -->
+          <!-- 白背景/サイト説明文 -->
+    			  <p class="font-text">
+    			    <strong><span class="shop-name">Pâtisserie Moriguchi</span></strong><br><br>
+    			  	Welcome to Nagano Cake!<br>
+              This site'll be an e-commerce site for cake sales.<br>
+              Even non-members can browse the products,<br>
+              Membership registration is required to purchase.
+            </p>
           </div>
-        <% end %>
-　　　　</div>
-      </div>
+    		</div>
+    	</div>
     </div>
-  </div>
-
-  <div class="row">
-  	 <div class="col-xs-9"></div>
-  	 <div class="col-xs-2">
-  	   <p><%= link_to "もっと見る＞", items_path %></p>
-  	 </div>
-  </div>
-</div>
+        <!-- オススメ商品表示 -->
+    <div class="sellers">
+      <p class="best-sellers">Best Sellers</p>
+      <p class="sellers-text">Pâtisserie Moriguchiの人気商品</p>
+    </div>
+    <div class="products-image">
+        <% @rank_items.each do |rank_item| %>
+        <div class="recommendation-items">
+          <%= link_to item_path(rank_item.id) do %> <!-- 画像をクリックしたら商品詳細画面へ遷移 -->
+            <%#= attachment_image_tag item, :image, size: "150x150",  fallback: "no_image.jpg"%>
+            <%= attachment_image_tag rank_item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'300x200' %><br>
+          <% end %>
+          <p><%= rank_item.name %></p>
+          <p>¥<%= (rank_item.price * 1.1).floor %></p> <!-- 税込計算式/.floor => 浮動小数点数の切り捨てを行うためFloatクラスのfloorメソッドを使用 -->
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+    	 <div class="col-md-9"></div>
+    	 <div class="col-md-3">
+    	   <p class="produts-link"><%= link_to "商品一覧　＞", items_path, class:"link" %></p>
+    	 </div>
+    </div>
