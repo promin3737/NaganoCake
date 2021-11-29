@@ -29,8 +29,8 @@
 }
 
 .sellers {
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 70px;
 }
 
 .best-sellers {
@@ -47,10 +47,45 @@
 .products-image {
   display: flex;
   justify-content: space-around;
+  position: relative;
+}
+
+.first-prize {
+  width: 60px;
+  height: 42px;
+  background-image: image-url('first_winner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 90px;
+  top: -55px;
+}
+
+.second-prize {
+  width: 60px;
+  height: 42px;
+  background-image: image-url('second_winner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 570px;
+  top: -55px;
+}
+
+.third-prize {
+  width: 60px;
+  height: 42px;
+  background-image: image-url('third_winner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 1050px;
+  top: -55px;
 }
 
 .produts-link {
   margin-top: 30px;
+  margin-bottom: 50px;
   color: brown;
   font-size: 40px;
 }
