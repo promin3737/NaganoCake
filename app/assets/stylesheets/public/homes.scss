@@ -96,3 +96,48 @@
   border-color: brown;
   border-width: 3px;/*5ピクセルの太さにする*/
 }
+
+.about_contents1 {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 150px;
+}
+
+.about_title {
+  margin-top: 100px;
+  font-size: 80px;
+}
+
+.about_shop {
+  font-size: 30px;
+}
+
+.about_image {
+  width: 900px;
+  height: 600px;
+  background-image: image-url('shutterstock_235157605.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about_contents2 {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 100px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.concept_title {
+  font-size: 40px;
+}
+
+.concept_message {
+  margin-top: 50px;
+  font-size: 50px;
+}
+
+.about_message {
+  font-size: 20px;
+  line-height: 2em;
+}
