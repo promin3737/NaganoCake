@@ -1,40 +1,44 @@
-<div class ="container px-5 px-sm-0">
+<%= stylesheet_link_tag 'public/items' %>
+<div class ="container-fruid">
   <div class ="row">
-    <div class="col-md-10">
-      <h2>商品詳細</h2>
-        <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
-        <div class="text-container">
-          <%= f.hidden_field :item_id, :value => @item.id %>
-          <div class="item_image">
-            <%= attachment_image_tag @item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %>
-          </div>
-          <div class="text-contents">
-            <strong><%= @item.name %></strong><br>
-            <%= @item.introduction %><br><br>
-            ¥<%= number_with_precision(@item.price * 1.1, precision: 0) %>(税込)<br>
-            <% if end_user_signed_in? %>
-              <% if @item.favorited_by?(current_end_user) %>
-                <p>
-                  <%= link_to item_favorites_path(@item), method: :delete do %>
-                  ♥<%= @item.favorites.count %> いいね
-                  <% end %>
-                </p>
-              <% else %>
-                <p>
-                  <%= link_to item_favorites_path(@item), method: :post do %>
-                  ♡<%= @item.favorites.count %> いいね
-                  <% end %>
-                </p>
+    <div class="col-md-6">
+      <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
+      <div class="item_container">
+        <%= f.hidden_field :item_id, :value => @item.id %>
+        <div class="item_image">
+          <%= attachment_image_tag @item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'600x400' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
+      <div class="text_container">
+        <p class="item_detail_name"><%= @item.name %></p>
+        <p class="item_introduction"><%= @item.introduction %></p>
+        <p class="item_detail_price">¥<%= number_with_precision(@item.price * 1.1, precision: 0) %>(税込)</p>
+        <% if end_user_signed_in? %>
+          <% if @item.favorited_by?(current_end_user) %>
+            <p class="item_favorites">
+              <%= link_to item_favorites_path(@item), method: :delete do %>
+                ♥<%= @item.favorites.count %> いいね
               <% end %>
-            <% end %>
+            </p>
+          <% else %>
+            <p class="item_favorites">
+              <%= link_to item_favorites_path(@item), method: :post do %>
+                ♡<%= @item.favorites.count %> いいね
+              <% end %>
+            </p>
+          <% end %>
+        <% end %>
             <%#= f.collection_select(:cart_item_id, CartItem.all, :id, :amount, include_blank: "個数選択") %>
             <%#= f.select :cart_item_id, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], :id, :amount, include_blank: "個数選択" %>
             <%= f.number_field :amount, placeholder: "個数選択", min: 1, max: 20 %>
             <%#= f.select :amount, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]], include_blank: "個数選択" %>
             <%= f.submit 'カートに入れる', class:"btn btn-lg btn-block btn-success mt-4" %>
-          </div>
-        </div>
-        <% end %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
