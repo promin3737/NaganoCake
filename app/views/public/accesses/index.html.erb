@@ -1,11 +1,35 @@
-    <h2>アクセス</h2>
-    <div id='map'></div>
-    
-    <style>
-    #map{
-      height: 500px;
-    }
-    </style>
+    <%= stylesheet_link_tag 'public/accesses' %>
+    <p class="guide_title">Guide</p>
+    <p class="shop_name">Pâtisserie Moriguchi</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="guide_container">
+                    <div class="guide_image"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text_container">
+                    <div class="guide_text">
+                        <p>大阪市のベッドタウンとして位置づけられている守口市にたたずむケーキ屋さん</p>
+                        <p>定番のショートケーキやチョコケーキをはじめ地元の方から高い評価を受けています。</p>
+                        <p>アクセスも地下鉄谷町線守口駅からすぐの好立地！！</p>
+                        <p>是非お立ち寄りください！！</p>
+                    </div>
+                    <div class="shop_access">
+                        <p class="border_line"></p>
+                        <p class="shop_info">SHOP INFO</p>
+                        <p>住所 　　 ー　大阪府守口市京阪本通２丁目１ー１</p>
+                        <p>Tel　　　ー　06-0000-1111</p>
+                        <p>営業時間　ー　11:00〜18:00</p>
+                        <p>　　　　　　　定休日：毎週月曜日</p>
+                        <div id='map'></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script>
     var map;

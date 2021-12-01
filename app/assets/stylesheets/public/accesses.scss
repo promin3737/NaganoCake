@@ -1,3 +1,67 @@
 // Place all the styles related to the public/accesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.guide_title {
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 60px;
+    font-size: 50px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 8px;
+}
+
+.shop_name {
+    font-size: 50px;
+    margin-right: 250px;
+    text-align: end;
+    color: green;
+}
+
+.guide_container {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.guide_image {
+    margin-top: 20px;
+    width: 600px;
+    height: 400px;
+    background-image: image-url('shutterstock_1538335058.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.text_container {
+    margin-left: 30px;
+}
+
+.guide_text {
+    margin-top: 20px;
+}
+
+.shop_access {
+    position: relative;
+}
+
+.border_line {
+    margin-top: 30px;
+    width: 80px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+.shop_info {
+    margin-top: 30px;
+    font-size: 30px;
+    color: green;
+}
+
+#map {
+    width: 350px;
+    height: 200px;
+    position: absolute;
+    top: 130px;
+    left: 300px;
+}
