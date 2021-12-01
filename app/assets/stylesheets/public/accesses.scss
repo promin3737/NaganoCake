@@ -24,7 +24,6 @@
 }
 
 .guide_image {
-    margin-top: 20px;
     width: 600px;
     height: 400px;
     background-image: image-url('shutterstock_1538335058.jpg');
@@ -36,16 +35,13 @@
     margin-left: 30px;
 }
 
-.guide_text {
-    margin-top: 20px;
-}
-
 .shop_access {
     position: relative;
+    margin-bottom: 50px;
 }
 
 .border_line {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 80px;
     border-bottom: solid;
     border-color: black;
@@ -53,7 +49,7 @@
 }
 
 .shop_info {
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 30px;
     color: green;
 }
@@ -62,6 +58,6 @@
     width: 350px;
     height: 180px;
     position: absolute;
-    top: 130px;
+    top: 80px;
     left: 300px;
 }
