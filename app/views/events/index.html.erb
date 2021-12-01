@@ -1,7 +1,6 @@
+<%= stylesheet_link_tag 'events' %>
 <% if admin_signed_in? %>
   <p id="notice"><%= notice %></p>
-  
-  <h1>Events</h1>
   
   <table>
     <thead>
@@ -35,4 +34,5 @@
   
   <% end %>
 
+<p class="events-title">Events</p>
 <div id="calendar"></div>
