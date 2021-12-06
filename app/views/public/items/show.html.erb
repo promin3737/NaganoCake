@@ -1,18 +1,14 @@
 <%= stylesheet_link_tag 'public/items' %>
 <div class ="container-fruid">
   <div class ="row">
-    <div class="col-md-6">
-      <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
+    <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
+    <div class="detail_container">
       <div class="item_container">
         <%= f.hidden_field :item_id, :value => @item.id %>
         <div class="item_image">
           <%= attachment_image_tag @item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'600x400' %>
         </div>
       </div>
-      <% end %>
-    </div>
-    <div class="col-md-6">
-      <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
       <div class="text_container">
         <p class="item_detail_name"><%= @item.name %></p>
         <p class="item_introduction"><%= @item.introduction %></p>
@@ -38,7 +34,7 @@
             <%#= f.select :amount, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]], include_blank: "個数選択" %>
             <%= f.submit 'カートに入れる', class:"btn btn-lg btn-block btn-success mt-4" %>
       </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
