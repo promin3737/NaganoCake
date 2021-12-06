@@ -10,6 +10,12 @@
         </div>
       </div>
       <div class="text_container">
+        <% if @cart_item.errors.any? %>
+          error
+          <% @cart_item.errors.full_messages.each do |message| %>
+            <%= message %><br>
+          <% end %>
+        <% end %>
         <p class="item_detail_name"><%= @item.name %></p>
         <p class="item_introduction"><%= @item.introduction %></p>
         <p class="item_detail_price">¥<%= number_with_precision(@item.price * 1.1, precision: 0) %>(税込)</p>
