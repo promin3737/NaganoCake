@@ -1,25 +1,36 @@
+<%= stylesheet_link_tag 'public/orders' %>
 <div class ="container px-5 px-sm-0">
   <div class ="row">
-    <div class="col-md-10 mx-auto">
-      <h1>ご注文ありがとうございました！</h1>
-      <br>
-      <%= link_to "買い物を続ける", items_path, class:"btn btn-success" %>
-      <%= link_to "トップページへ", root_path, class:"btn btn-danger" %>
-      <br>
-  		<h4 class="recommendation"><i class="fas fa-crown"></i> 当店オススメ商品 <i class="fas fa-crown"></i></h4><br>
-  		<div class="row">
-        <div id="multiple-items">
-        <% @rank_items.each do |rank_item| %>
+    <div class="col-md-12 mx-auto">
+      <p class="complete-text">ご注文ありがとうございました！</p>
+      <div class="button-position">
+        <%= link_to "買い物を続ける", items_path, class:"btn btn-success b-text" %>
+        <%= link_to "トップページへ", root_path, class:"btn btn-danger b-text" %>
+      </div>
+  		<div class="sellers">
+        <p class="best-sellers">Best Sellers</p>
+        <p class="sellers-text">Pâtisserie Moriguchiの人気商品</p>
+      </div>
+      <div class="products-image">
+          <% @rank_items.each do |rank_item| %>
           <div class="recommendation-items">
             <%= link_to item_path(rank_item.id) do %> <!-- 画像をクリックしたら商品詳細画面へ遷移 -->
               <%#= attachment_image_tag item, :image, size: "150x150",  fallback: "no_image.jpg"%>
-              <%= attachment_image_tag rank_item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'200x200' %><br>
+              <%= attachment_image_tag rank_item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'300x200' %><br>
             <% end %>
-            <p><%= rank_item.name %></p>
-            <p>¥<%= (rank_item.price * 1.1).floor %></p> <!-- 税込計算式/.floor => 浮動小数点数の切り捨てを行うためFloatクラスのfloorメソッドを使用 -->
+            <!--<p><%#= rank_item.name %></p>-->
+            <!--<p>¥<%#= (rank_item.price * 1.1).floor %></p> <!-- 税込計算式/.floor => 浮動小数点数の切り捨てを行うためFloatクラスのfloorメソッドを使用 -->
           </div>
         <% end %>
-　　　　</div>
+        <div class="first-prize"></div>
+        <div class="second-prize"></div>
+        <div class="third-prize"></div>
+      </div>
+      <div class="row">
+      	 <div class="col-md-9"></div>
+      	 <div class="col-md-3">
+      	   <p class="produts-link"><strong><%= link_to "商品一覧　＞", items_path, class:"link" %></strong></p>
+      	 </div>
       </div>
     </div>
   </div>

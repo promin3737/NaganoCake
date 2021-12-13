@@ -8,4 +8,92 @@
 .text-confirm {
   margin-left: 160px;
   margin-top: 30px;
+  // color: black;
+  // border-bottom: solid;
+  // border-color: brown;
+  // border-width: 3px;/*3ピクセルの太さにする*/
+}
+
+.complete-text {
+  margin-top: 60px;
+  font-size: 60px;
+  text-align: center;
+}
+
+.button-position {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.b-text {
+  display: inline-block;
+}
+
+.sellers {
+  margin-top: 80px;
+  margin-bottom: 70px;
+}
+
+.best-sellers {
+  font-size: 60px;
+  color: green;
+  text-align: center;
+}
+
+.sellers-text {
+  font-size: 30px;
+  text-align: center;
+}
+
+.products-image {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.first-prize {
+  width: 60px;
+  height: 42px;
+  background-image: image-url('first_winner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 30px;
+  top: -50px;
+}
+
+.second-prize {
+  width: 60px;
+  height: 42px;
+  background-image: image-url('second_winner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 410px;
+  top: -50px;
+}
+
+.third-prize {
+  width: 60px;
+  height: 42px;
+  background-image: image-url('third_winner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 790px;
+  top: -50px;
+}
+
+.produts-link {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  color: brown;
+  font-size: 40px;
+}
+
+.link {
+  color: brown;
+  border-bottom: solid;
+  border-color: brown;
+  border-width: 3px;/*3ピクセルの太さにする*/
 }
