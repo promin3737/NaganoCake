@@ -1,18 +1,19 @@
+<%= stylesheet_link_tag 'public/orders' %>
 <div class ="container px-5 px-sm-0">
   <div class ="row">
-    <div class="col-md-10">
-      <h2>注文情報入力</h2>
+    <div class="col-md-12 mx-auto">
+      <h2 class="orders_new_text">注文情報入力</h2>
       <%= form_with model: @order, url: orders_confirm_path, method: :get, local:true do |f| %>
       <%# current_end_user.orders.each do |order| %>
       <%#= f.hidden_field :id, :value => order.id %>
       <%# end %>
       <div class="text-contents">
-        <h4><strong>支払方法</strong></h4>
+        <h4><strong>１.  支払方法</strong></h4>
         <label><%= f.radio_button :method, "クレジットカード" %>クレジットカード</label>
         <label><%= f.radio_button :method, "銀行振り込み" %>銀行振込</label>
       </div>
       <div class="text-contents">
-        <h4><strong>お届け先</strong></h4>
+        <h4><strong>２. お届け先</strong></h4>
         <label><%= f.radio_button :address_option, 0 %>ご自身の住所</label><br>
         〒<%= current_end_user.postal_code %> <%= current_end_user.address %><br>
         <%= current_end_user.full_name %><br><br>

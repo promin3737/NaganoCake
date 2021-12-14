@@ -1,7 +1,8 @@
+<%= stylesheet_link_tag 'public/cart_items' %>
 <div class ="container">
   <div class ="row">
     <div class="col-md-11 mx-auto">
-      <h2>ショッピングカート</h2>
+      <h2 class="cart_item_text">ショッピングカート</h2>
       <div class="cart_item_button1">
       <%= link_to "カートを空にする", cart_items_all_path, method: :delete, data: {confirm: "本当にカートを空にしますか？"}, class: "btn btn-danger" %>
       </div>
@@ -23,7 +24,7 @@
               <%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %>
               <%= cart_item.item.name %>
             </td>
-            <td><%= number_with_precision(cart_item.item.price * 1.1, precision: 0) %></td>
+            <td>¥<%= number_with_precision(cart_item.item.price * 1.1, precision: 0) %></td>
             <td>
                 <%= form_with model: cart_item, url: cart_items_path, local:true, method: :patch do |f| %>
                 <%= f.hidden_field :id, :value => cart_item.id %>
@@ -33,7 +34,7 @@
                 <% end %>
             </td>
             <td>
-                <%= number_with_precision(cart_item.item.price * 1.1, precision: 0).to_i * cart_item.amount.to_i %>
+                ¥<%= number_with_precision(cart_item.item.price * 1.1, precision: 0).to_i * cart_item.amount.to_i %>
             </td>
                 <% @sum += number_with_precision(cart_item.item.price * 1.1, precision: 0).to_i * cart_item.amount.to_i %>
             <td><%= link_to "削除する", cart_items_path(id: cart_item.id), method: :delete, class: "btn btn-danger" %></td>
@@ -41,14 +42,16 @@
           <% end %>
         </tbody>
       </table>
-      <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+      <% unless @cart_items.count == 0 %>
+        <%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %>
+      <% end %>
       <div class="col-md-4 ml-auto">
         <div class="total-price">
           <table class="table table-striped">
             <tbody>
               <tr>
                 <td>合計金額</td>
-                <td><%= @sum %></td>
+                <td>¥<%= @sum %></td>
               </tr>
             </tbody>
           </table>
@@ -56,9 +59,9 @@
       </div>
       <div class="cart_item_button2">
       <% if @cart_items.count == 0 %>
-        <%= link_to "情報入力に進む", cart_items_path, class: "btn btn-success" %>
+        <%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %>
       <% else %>
-        <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success" %>
+        <%= link_to "レジに進む", new_order_path, class: "btn btn-success" %>
       <% end %>
       </div>
     </div>
