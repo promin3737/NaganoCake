@@ -1,35 +1,50 @@
-<h1>マイページ</h1>
-<h3>登録情報</h3>
-<%= link_to "編集する", end_user_edit_profile_path, class: "btn btn-success" %>
-<table class="table table-striped">
-  <tbody>
-    <tr>
-      <td>氏名</td>
-      <td><%= @end_user.last_name %>　<%= @end_user.first_name %></td>
-    </tr>
-    <tr>
-      <td>カナ</td>
-      <td><%= @end_user.last_name_kana %>　<%= @end_user.first_name_kana %></td>
-    </tr>
-    <tr>
-      <td>郵便番号</td>
-      <td><%= @end_user.postal_code %></td>
-    </tr>
-    <tr>
-      <td>住所</td>
-      <td><%= @end_user.address %></td>
-    </tr>
-    <tr>
-      <td>電話番号</td>
-      <td><%= @end_user.phone_number %></td>
-    </tr>
-    <tr>
-      <td>メールアドレス</td>
-      <td><%= @end_user.email %></td>
-    </tr>
-  </tbody>
-</table>
-<h3>配送先</h3>
-<%= link_to "一覧を見る", addresses_path, class: "btn btn-primary" %>
-<h3>注文履歴</h3>
-<%= link_to "一覧を見る", orders_path, class: "btn btn-primary" %>
+<%= stylesheet_link_tag 'public/end_users' %>
+<div class ="container px-5 px-sm-0">
+  <div class ="row">
+    <div class="col-md-11 mx-auto">
+      <h2 class="mypage-text">マイページ</h2>
+      <h3 class="mypage-text"><strong>登録情報</strong></h3>
+      <div class="button-contents1">
+        <%= link_to "編集する", end_user_edit_profile_path, class: "btn btn-success b-text" %>
+      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>氏名</td>
+            <td><%= @end_user.last_name %>　<%= @end_user.first_name %></td>
+          </tr>
+          <tr>
+            <td>カナ</td>
+            <td><%= @end_user.last_name_kana %>　<%= @end_user.first_name_kana %></td>
+          </tr>
+          <tr>
+            <td>郵便番号</td>
+            <td><%= @end_user.postal_code %></td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td><%= @end_user.address %></td>
+          </tr>
+          <tr>
+            <td>電話番号</td>
+            <td><%= @end_user.phone_number %></td>
+          </tr>
+          <tr>
+            <td>メールアドレス</td>
+            <td><%= @end_user.email %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button-contents">
+        <div class="button-contents2">
+          <h3 class="mypage-text"><strong>配送先</strong></h3>
+          <%= link_to "一覧を見る", addresses_path, class: "btn btn-primary" %>
+        </div>
+        <div class="button-contents2">
+          <h3 class="mypage-text"><strong>注文履歴</strong></h3>
+          <%= link_to "一覧を見る", orders_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

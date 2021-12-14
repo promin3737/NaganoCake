@@ -1,3 +1,24 @@
 // Place all the styles related to the public/EndUsers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.mypage-text {
+    margin-top: 30px;
+}
+
+.button-contents {
+    display: flex;
+    justify-content: center;
+}
+
+.button-contents1 {
+    text-align: end;
+    margin-bottom: 15px;
+}
+
+.b-text {
+    display: inline-block;
+}
+
+.button-contents2 {
+    margin: 0 60px;
+}
