@@ -20,7 +20,7 @@
   height: auto;
   text-align: center;
   position: absolute;
-  top: 150px;
+  top: 170px;
   transform: rotate( 90deg );
 }
 
@@ -147,17 +147,52 @@
   .top_image {
     width: 100%;
     height: 320px;
-    margin-top: 20px;
+    margin: 20px auto 0;
     background-image: image-url('shutterstock_161584118.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
   
+  .font-text {
+    width: auto;
+    height: auto;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    transform: rotate( 0deg );
+ }
+ 
   .shop-name {
     font-size: 40px;
     line-height: 40px;
   }
+  
+  .sellers {
+    margin-top: 320px;
+    margin-bottom: 70px;
+  }
+  
+  .best-sellers {
+    font-size: 40px;
+    color: green;
+    text-align: center;
+  }
 
+  .sellers-text {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .products-image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .recommendation-items {
+    margin: 0 auto 60px;
+  }
+  
   .first-prize {
     width: 60px;
     height: 42px;
@@ -165,8 +200,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    left: 10px;
-    top: -55px;
+    left: 25px;
+    top: -45px;
   }
 
   .second-prize {
@@ -176,8 +211,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    left: 200px;
-    top: -55px;
+    left: 25px;
+    top: 215px;
   }
 
   .third-prize {
@@ -187,7 +222,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    left: 390px;
-    top: -55px;
+    left: 25px;
+    top: 475px;
+  }
+  
+  .produts-link {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: brown;
+    font-size: 30px;
+    padding-left: 150px;
   }
 }
