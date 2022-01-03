@@ -142,3 +142,52 @@
   font-size: 20px;
   line-height: 2em;
 }
+
+@media screen and (max-width:480px) {
+  .top_image {
+    width: 100%;
+    height: 320px;
+    margin-top: 20px;
+    background-image: image-url('shutterstock_161584118.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .shop-name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .first-prize {
+    width: 60px;
+    height: 42px;
+    background-image: image-url('first_winner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 10px;
+    top: -55px;
+  }
+
+  .second-prize {
+    width: 60px;
+    height: 42px;
+    background-image: image-url('second_winner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 200px;
+    top: -55px;
+  }
+
+  .third-prize {
+    width: 60px;
+    height: 42px;
+    background-image: image-url('third_winner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 390px;
+    top: -55px;
+  }
+}

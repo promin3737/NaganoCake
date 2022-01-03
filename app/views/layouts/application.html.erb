@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css">
@@ -38,7 +39,7 @@
                 <%= link_to 'アクセス', accesses_path, class: 'nav-link text-dark space' %>
               </li>
               <li>
-                <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete, class: 'nav-link text-dark space1' %>
+                <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete, class: 'nav-link text-dark space' %>
               </li>
             <% elsif admin_signed_in? %>
               <li>
@@ -57,7 +58,7 @@
                 <%= link_to "イベント", events_path, class: 'nav-link text-dark space' %>
               </li>
               <li>
-                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark space1' %>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark space' %>
               </li>
             <% else %>
               <li>
@@ -73,7 +74,7 @@
                 <%= link_to 'アクセス', accesses_path, class: 'nav-link text-dark space' %>
               </li>
               <li>
-                <%= link_to "新規登録", new_end_user_registration_path, class: 'nav-link text-dark space1' %>
+                <%= link_to "新規登録", new_end_user_registration_path, class: 'nav-link text-dark space' %>
               </li>
               <li>
                 <%= link_to "ログイン", new_end_user_session_path, class: 'nav-link text-dark space' %>
