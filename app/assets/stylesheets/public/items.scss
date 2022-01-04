@@ -64,3 +64,26 @@
   margin-top: 60px;
   font-size: 45px;
 }
+
+@media screen and (max-width:480px) {
+  .produts-title {
+    width: 50px;
+    margin-top: 15px;
+    margin-left: 30px;
+    font-size: 25px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 4px;
+  }
+  
+  .item_name {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .item_price {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 70px;
+  }
+}
