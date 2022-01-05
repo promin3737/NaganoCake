@@ -86,4 +86,45 @@
     margin-right: 20px;
     margin-bottom: 70px;
   }
+  
+  .detail_container {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+  }
+  
+  .item_container {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+  
+  .item_image img {
+    width: 390px;
+    height: 260px;
+  }
+  
+  .text_container {
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .item_detail_name {
+    font-size: 40px;
+  }
+  
+  .item_introduction {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  
+  .item_favorites {
+    font-size: 20px;
+  }
+  
+  .item_detail_price {
+    margin-top: 40px;
+    font-size: 30px;
+  }
 }
