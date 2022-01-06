@@ -233,4 +233,60 @@
     font-size: 30px;
     padding-left: 180px;
   }
+  
+  .about_contents1 {
+    width: 390px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about_title {
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 30px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 5px;
+  }
+
+  .about_contents2 {
+    width: 390px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about_shop {
+    margin: 25px;
+    font-size: 25px;
+  }
+
+  .about_image {
+    width: 100%;
+    height: 320px;
+    margin: 20px auto 0;
+    background-image: image-url('shutterstock_235157605.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .concept_title {
+    margin-left: 10px;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+
+  .concept_message {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 25px;
+  }
+  
+  .about_message {
+    font-size: 15px;
+    line-height: 1.5em;
+    margin: 0 5px 20px 5px;
+  }
 }
