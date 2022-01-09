@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cart_item_text {
+  width: 220px;
   margin-top: 30px;
+  margin-left: 60px;
+  font-size: 50px;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 8px;
 }
 
 .cart_item_button1 {
@@ -16,8 +22,14 @@
 
 @media screen and (max-width:480px) {
   .cart_item_text {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 135px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    font-size: 30px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 5px;
   }
   
   .cart_item_button1 {
