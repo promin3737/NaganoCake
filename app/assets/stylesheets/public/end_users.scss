@@ -46,7 +46,7 @@
 }
 
 .button-contents2 {
-    margin: 0 60px;
+    margin: 0 60px 30px;
 }
 
 input[type="text"] {
@@ -68,6 +68,10 @@ input[type="email"] {
 }
 
 .form-group1 {
+    margin-bottom: 15px;
+}
+
+.form-group2 {
     margin-bottom: 15px;
 }
 
@@ -113,5 +117,9 @@ input[type="email"] {
     
     .button-contents2 {
         margin: 0 25px;
+    }
+    
+    .form-group2 {
+        margin-bottom: 30px;
     }
 }
