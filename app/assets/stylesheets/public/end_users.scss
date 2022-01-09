@@ -2,7 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .mypage-text {
+    width: 100px;
     margin-top: 30px;
+    margin-left: 60px;
+    font-size: 50px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 8px;
+}
+
+.mypage-text-edit {
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 8px;
+}
+
+.mypage-text-confirm {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.mypage-text1 {
+    margin-top: 40px;
 }
 
 .button-contents {
@@ -33,10 +59,55 @@ input[type="email"] {
         height: 40px;
     }
     
+.form-kana {
+        margin-top: 32px;
+    }
+    
 .form-group {
     display: flex;
 }
 
+.form-group1 {
+    margin-bottom: 15px;
+}
+
 .form-contents1 {
     margin-top: 32px;
+}
+
+@media screen and (max-width:480px) {
+    .mypage-text {
+        width: 50px;
+        margin-top: 20px;
+        margin-left: 40px;
+        font-size: 30px;
+        border-bottom: solid;
+        border-color: black;
+        border-width: 5px;
+    }
+    
+    .mypage-text-edit {
+        width: 50px;
+        margin-top: 20px;
+        margin-left: 40px;
+        margin-bottom: 15px;
+        font-size: 30px;
+        border-bottom: solid;
+        border-color: black;
+        border-width: 5px;
+    }
+    
+    .button-contents2 {
+        margin: 0 20px 40px;
+    }
+    
+    input[type="text"] {
+        width: 180px;
+        height: 40px;
+    }
+    
+    input[type="email"] {
+        width: 360px;
+        height: 40px;
+    }
 }

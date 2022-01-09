@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag 'public/end_users' %>
 <div class="container">
   <div class="row">
+    <div class="mypage-text-edit">Edit</div>
     <div class="col-md-10 mx-auto">
-      <h2>会員情報編集</h2>
       <div class="form-body">
       <!--<div class="form-body">-->
         <%= form_with model: @end_user, local:true do |f| %>
@@ -23,7 +23,7 @@
                 <%= f.text_field :last_name_kana, class:"form-control" %>
               </div>
               <div class="cod-md-4">
-                <%= f.text_field :first_name_kana, class:"form-control" %>
+                <%= f.text_field :first_name_kana, class:"form-control form-kana" %>
               </div>
             </div>
             <div class="form-group1">
@@ -32,7 +32,7 @@
             </div>
             <div class="form-group1">
               <label for="address">住所</label>
-              <%= f.text_field :address, class:"form-control" %>
+              <%= f.text_field :address, class:"form-control form-address" %>
             </div>
             <div class="form-group1">
               <label for="phone_number">電話番号</label>

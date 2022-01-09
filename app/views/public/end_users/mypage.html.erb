@@ -1,9 +1,8 @@
 <%= stylesheet_link_tag 'public/end_users' %>
 <div class ="container px-5 px-sm-0">
   <div class ="row">
+    <div class="mypage-text">MyPage</div>
     <div class="col-md-11 mx-auto">
-      <h2 class="mypage-text">マイページ</h2>
-      <h3 class="mypage-text"><strong>登録情報</strong></h3>
       <div class="button-contents1">
         <%= link_to "編集する", end_user_edit_profile_path, class: "btn btn-success b-text" %>
       </div>
@@ -37,11 +36,11 @@
       </table>
       <div class="button-contents">
         <div class="button-contents2">
-          <h3 class="mypage-text"><strong>配送先</strong></h3>
+          <h3 class="mypage-text1"><strong>配送先</strong></h3>
           <%= link_to "一覧を見る", addresses_path, class: "btn btn-primary" %>
         </div>
         <div class="button-contents2">
-          <h3 class="mypage-text"><strong>注文履歴</strong></h3>
+          <h3 class="mypage-text1"><strong>注文履歴</strong></h3>
           <%= link_to "一覧を見る", orders_path, class: "btn btn-primary" %>
         </div>
       </div>
