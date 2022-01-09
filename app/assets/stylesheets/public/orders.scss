@@ -5,6 +5,28 @@
   margin-top: 50px;
 }
 
+.order-history {
+  width: 300px;
+  margin-top: 30px;
+  margin-left: 60px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 8px;
+}
+
+.order-history-detail {
+  width: 270px;
+  margin-top: 30px;
+  margin-left: 0px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 8px;
+}
+
 .text-confirm {
   margin-left: 160px;
   margin-top: 30px;
@@ -120,9 +142,47 @@
 }
 
 .money-info {
-  margin-top: 100px;
+  margin-top: 0px;
 }
 
 .order-contents {
   margin-top: 30px;
+}
+
+@media screen and (max-width:480px) {
+  .order-history {
+    width: 180px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 5px;
+  }
+  
+  .order-history-detail {
+    width: 160px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    border-bottom: solid;
+    border-color: black;
+    border-width: 5px;
+  }
+  
+  .money-info {
+    margin-top: 20px;
+  }
+  
+  .order-contents {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .order-contents-detail {
+    margin: 0 10px;
+  }
 }

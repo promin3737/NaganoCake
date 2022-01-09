@@ -13,8 +13,7 @@
 
 #calendar {
   margin: 0 auto;
-  width: 800px;
-  height: 350px;
+  width: 650px;
 }
 
 @media screen and (max-width:480px) {
@@ -22,9 +21,16 @@
     width: 50px;
     margin-top: 15px;
     margin-left: 30px;
-    font-size: 25px;
+    margin-bottom: 20px;
+    font-size: 30px;
     border-bottom: solid;
     border-color: black;
     border-width: 4px;
+  }
+  
+  #calendar {
+    margin: 0 auto;
+    width: 360px;
+    height: 200px;
   }
 }
