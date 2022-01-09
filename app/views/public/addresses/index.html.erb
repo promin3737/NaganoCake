@@ -1,8 +1,9 @@
+<%= stylesheet_link_tag 'public/addresses' %>
 <div class ="container px-5 px-sm-0">
   <div class ="row">
-    <div class="col-md-10">
-      <h2>配送先登録/一覧</h2>
-      <div class="input-group mb-3 mt-4">
+    <div class="address-text">Address</div>
+    <div class="col-md-11">
+      <div class="input-group">
         <%= form_with model: @address, url: addresses_path, local:true do |f| %>
           <div class="form-group">
             <h4>郵便番号</h4>

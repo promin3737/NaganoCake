@@ -1,3 +1,30 @@
 // Place all the styles related to the Public/addresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.address-text {
+  width: 100px;
+  margin-top: 30px;
+  margin-left: 60px;
+  margin-bottom: 30px;
+  font-size: 50px;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 8px;
+}
+
+input[type="text"] {
+        width: 300px;
+        height: 40px;
+    }
+
+@media screen and (max-width:480px) {
+    .address-text {
+        width: 50px;
+        margin-top: 20px;
+        margin-left: 40px;
+        font-size: 30px;
+        border-bottom: solid;
+        border-color: black;
+        border-width: 5px;
+    }
+}
